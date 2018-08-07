@@ -27,11 +27,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /*,----+----+----+----+----+----+----+----+----+----+----+----+----+--------.  ,----+----. */
     GRV , F1 , F2 , F3 , F4 , F5 , F6 , F7 , F8 , F9 ,F10 ,F11 ,F12 ,   DEL  ,       ,HOME,
  /*|esc-`-1--`-2--`-3--`-4--`-5--`-6--`-7--`-8--`-9--`-0--`mnus`plus`--bksp--|  |ins-`pgup| */
-          ,MUTE,VOLD,VOLU,    ,    ,    ,    ,    ,PSCR,SLCK,PAUS, X2 ,      ,       ,END,
+          ,MUTE,VOLD,VOLU,    ,    ,    ,PGUP, UP ,PGDN,PSCR,SLCK,PAUS,      ,       ,END,
  /*|tab---`-q--`-w--`-e--`-r--`-t--`-y--`-u--`-i--`-o--`-p--`-{--`-}--`--|---|  `del-`pgdn' */
-           ,MPLY,MPRV,MNXT,MSTP,    ,    ,    ,    ,    ,    ,    ,          ,
+           ,MPLY,MPRV,MNXT,MSTP,    ,HOME,LEFT,DOWN,RGHT,    ,    ,          ,
  /*|caps---`-a--`-s--`-d--`-f--`-g--`-h--`-j--`-k--`-l--`-;--`-'--`----enter-|  ,----. */
-             ,    ,    ,    ,    ,    ,    ,MUTE,VOLD,VOLU,    ,             ,   VOLU,
+             ,    ,    ,    ,    ,    ,END ,MUTE,VOLD,VOLU, X2 ,             ,   VOLU,
  /*|shift----`-z--`-x--`-c--`-v--`-b--`-n--`-m--`-,--`-.--`-/--`-------shift-.--|-up-|----. */
          ,     ,     ,                              ,      ,     ,     ,    MUTE,VOLD,MUTE
  /*`ctrl-+-gui-+-alt-+----------space---------------+-fn---+-alt-+ctrl-'   `left+down+rght' */
