@@ -4,14 +4,14 @@
 #define _FN1 1
 #define _FN2 2
 #define KC_ KC_TRNS
-#define KC_X0 LT(_FN2, KC_GRV)
+#define KC_X0 KC_GESC
 #define KC_X1 MO(_FN1)
 #define KC_X2 BL_STEP
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc(
  /*,----+----+----+----+----+----+----+----+----+----+----+----+----+--------.  ,----+----. */
-    ESC , 1  , 2  , 3  , 4  , 5  , 6  , 7  , 8  , 9  , 0  ,MINS,EQL ,  BSPC  ,   INS ,PGUP,
+    X0  , 1  , 2  , 3  , 4  , 5  , 6  , 7  , 8  , 9  , 0  ,MINS,EQL ,  BSPC  ,   INS ,PGUP,
  /*|----`----`----`----`----`----`----`----`----`----`----`----`----`--------|  |----`----| */
     TAB   , Q  , W  , E  , R  , T  , Y  , U  , I  , O  , P  ,LBRC,RBRC, BSLS ,   DEL ,PGDN,
  /*|------`----`----`----`----`----`----`----`----`----`----`----`----`------|  `----`----' */
