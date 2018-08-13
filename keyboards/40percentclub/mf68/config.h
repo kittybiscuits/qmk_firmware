@@ -50,7 +50,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define BACKLIGHT_PIN B5
 #define BACKLIGHT_BREATHING
-#define BACKLIGHT_LEVELS 3
+#define BACKLIGHT_LEVELS 15
 
 // #define RGB_DI_PIN E2
 // #ifdef RGB_DI_PIN
