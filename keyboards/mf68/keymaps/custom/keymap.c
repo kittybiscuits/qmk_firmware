@@ -38,9 +38,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /*|tab---`-q--`-w--`-e--`-r--`-t--`-y--`-u--`-i--`-o--`-p--`-{--`-}--`--|---|  `del-`pgdn' */
            ,MPLY,MPRV,MNXT,MSTP,    ,HOME,LEFT,DOWN,RGHT,    ,    ,          ,
  /*|caps---`-a--`-s--`-d--`-f--`-g--`-h--`-j--`-k--`-l--`-;--`-'--`----enter-|  ,----. */
-             ,    ,    ,    ,    ,    ,END ,MUTE,VOLD,VOLU,    ,             ,   BLUP,
+             ,APP ,    ,    ,    ,    ,END ,MUTE,VOLD,VOLU,    ,             ,   BLUP,
  /*|shift----`-z--`-x--`-c--`-v--`-b--`-n--`-m--`-,--`-.--`-/--`-------shift-.--|-up-|----. */
-         ,     ,     ,                              ,      ,     ,     ,    BLBR,BLDN,BLTO
+    LCTL ,LGUI ,LALT ,                              , RALT ,     ,RCTL ,    BLBR,BLDN,BLTO
  /*`ctrl-+-gui-+-alt-+----------space---------------+-fn---+-alt-+ctrl-'   `left+down+rght' */
   ),
 
