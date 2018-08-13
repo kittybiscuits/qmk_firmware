@@ -6,7 +6,14 @@
 #define KC_ KC_TRNS
 #define KC_X0 KC_GESC
 #define KC_X1 MO(_FN1)
-#define KC_X2 BL_STEP
+
+#define KC_BLUP BL_INC
+#define KC_BLDN BL_DEC
+#define KC_BLTO BL_TOGG
+#define KC_BLBR BL_BRTG
+#define KC_BLST BL_STEP
+#define KC_BLON BL_ON
+#define KC_BLOF BL_OFF
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc(
@@ -31,9 +38,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /*|tab---`-q--`-w--`-e--`-r--`-t--`-y--`-u--`-i--`-o--`-p--`-{--`-}--`--|---|  `del-`pgdn' */
            ,MPLY,MPRV,MNXT,MSTP,    ,HOME,LEFT,DOWN,RGHT,    ,    ,          ,
  /*|caps---`-a--`-s--`-d--`-f--`-g--`-h--`-j--`-k--`-l--`-;--`-'--`----enter-|  ,----. */
-             ,    ,    ,    ,    ,    ,END ,MUTE,VOLD,VOLU, X2 ,             ,   VOLU,
+             ,    ,    ,    ,    ,    ,END ,MUTE,VOLD,VOLU,    ,             ,   BLUP,
  /*|shift----`-z--`-x--`-c--`-v--`-b--`-n--`-m--`-,--`-.--`-/--`-------shift-.--|-up-|----. */
-         ,     ,     ,                              ,      ,     ,     ,    MUTE,VOLD,MUTE
+         ,     ,     ,                              ,      ,     ,     ,    BLBR,BLDN,BLTO
  /*`ctrl-+-gui-+-alt-+----------space---------------+-fn---+-alt-+ctrl-'   `left+down+rght' */
   ),
 
