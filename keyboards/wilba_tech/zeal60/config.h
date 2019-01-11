@@ -73,7 +73,7 @@
 #define RGB_BACKLIGHT_ZEAL60
 
 // enable/disable LEDs based on layout
-#define RGB_BACKLIGHT_USE_SPLIT_BACKSPACE 0
+#define RGB_BACKLIGHT_USE_SPLIT_BACKSPACE 1
 #define RGB_BACKLIGHT_USE_SPLIT_LEFT_SHIFT 0
 #define RGB_BACKLIGHT_USE_SPLIT_RIGHT_SHIFT 0
 #define RGB_BACKLIGHT_USE_7U_SPACEBAR 0
@@ -81,7 +81,7 @@
 #define RGB_BACKLIGHT_DISABLE_HHKB_BLOCKER_LEDS 0
 
 // disable backlight when USB suspended (PC sleep/hibernate/shutdown)
-#define RGB_BACKLIGHT_DISABLE_WHEN_USB_SUSPENDED 0
+#define RGB_BACKLIGHT_DISABLE_WHEN_USB_SUSPENDED 1
 
 // disable backlight after timeout in minutes, 0 = no timeout
 #define RGB_BACKLIGHT_DISABLE_AFTER_TIMEOUT 0
@@ -136,3 +136,20 @@
 #define DYNAMIC_KEYMAP_MACRO_EEPROM_ADDR 628
 #define DYNAMIC_KEYMAP_MACRO_EEPROM_SIZE 396
 #define DYNAMIC_KEYMAP_MACRO_COUNT 16
+
+/*
+ * This allows us to press Shift+Esc to get a tilde ("~") character. Unfortunately,
+ * this breaks certain key combinations. The following #defines restore those key
+ * combinations while still allowing Shift+Esc to send a tilde character.
+ *
+ * See: https://github.com/qmk/qmk_firmware/blob/master/docs/feature_grave_esc.md
+ *
+ * GRAVE_ESC_ALT_OVERRIDE  - Allows Command+Option+Escape to work on Macs.
+ * GRAVE_ESC_CTRL_OVERRIDE - Allows Control+Shift+Escape to work on Windows.
+ * GRAVE_ESC_GUI_OVERRIDE  - Just in case. :)
+ */
+#define GRAVE_ESC_ALT_OVERRIDE     // Always send Escape if Alt is pressed
+#define GRAVE_ESC_CTRL_OVERRIDE    // Always send Escape if Control is pressed
+#define GRAVE_ESC_GUI_OVERRIDE     // Always send Escape if GUI is pressed
+//#define GRAVE_ESC_SHIFT_OVERRIDE // Always send Escape if Shift is pressed
+
