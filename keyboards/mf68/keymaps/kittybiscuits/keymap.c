@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /*|esc-`-1--`-2--`-3--`-4--`-5--`-6--`-7--`-8--`-9--`-0--`mnus`plus`--bksp--|  |ins-`pgup| */
           ,MUTE,VOLD,VOLU,    ,    ,    ,PGUP, UP ,PGDN,PSCR,SLCK,PAUS,      ,       ,END,
  /*|tab---`-q--`-w--`-e--`-r--`-t--`-y--`-u--`-i--`-o--`-p--`-{--`-}--`--|---|  `del-`pgdn' */
-           ,MPLY,MPRV,MNXT,MSTP,    ,HOME,LEFT,DOWN,RGHT,    ,    ,          ,
+           ,MPLY,MPRV,MNXT,MSTP,    ,HOME,LEFT,DOWN,RGHT,DEL ,INS ,          ,
  /*|caps---`-a--`-s--`-d--`-f--`-g--`-h--`-j--`-k--`-l--`-;--`-'--`----enter-|  ,----. */
              ,APP ,    ,    ,    ,    ,END ,MUTE,VOLD,VOLU,    ,             ,   BLUP,
  /*|shift----`-z--`-x--`-c--`-v--`-b--`-n--`-m--`-,--`-.--`-/--`-------shift-.--|-up-|----. */
