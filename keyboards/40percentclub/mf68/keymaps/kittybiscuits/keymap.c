@@ -6,6 +6,7 @@
 #define KC_ KC_TRNS
 #define KC_X0 KC_GESC
 #define KC_X1 MO(_FN1)
+#define KC_X2 MT(MOD_LCTL, KC_ESC)
 
 #define KC_BLUP BL_INC
 #define KC_BLDN BL_DEC
@@ -22,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /*|----`----`----`----`----`----`----`----`----`----`----`----`----`--------|  |----`----| */
     TAB   , Q  , W  , E  , R  , T  , Y  , U  , I  , O  , P  ,LBRC,RBRC, BSLS ,   DEL ,PGDN,
  /*|------`----`----`----`----`----`----`----`----`----`----`----`----`------|  `----`----' */
-    LCTL_T(KC_ESC), A  , S  , D  , F  , G  , H  , J  , K  , L  ,SCLN,QUOT,    ENTER ,
+    X2     , A  , S  , D  , F  , G  , H  , J  , K  , L  ,SCLN,QUOT,    ENTER ,
  /*|-------`----`----`----`----`----`----`----`----`----`----`----`----------|  ,----. */
     LSFT     , Z  , X  , C  , V  , B  , N  , M  ,COMM,DOT ,SLSH,       RSFT  ,    UP ,
  /*|---------`----`----`----`----`----`----`----`----`----`----`-------------.--|----|----. */

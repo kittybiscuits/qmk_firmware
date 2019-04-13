@@ -174,8 +174,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
 
-#endif
-
 /*
  * This allows us to press Shift+Esc to get a tilde ("~") character. Unfortunately,
  * this breaks certain key combinations. The following #defines restore those key
