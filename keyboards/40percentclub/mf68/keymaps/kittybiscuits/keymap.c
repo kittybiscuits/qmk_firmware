@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /*|caps---`-a--`-s--`-d--`-f--`-g--`-h--`-j--`-k--`-l--`-;--`-'--`----enter-|  ,----. */
              ,APP ,    ,    ,    ,    ,END ,MUTE,VOLD,VOLU,    ,             ,   BLUP,
  /*|shift----`-z--`-x--`-c--`-v--`-b--`-n--`-m--`-,--`-.--`-/--`-------shift-.--|-up-|----. */
-    LCTL ,LGUI ,LALT ,                              , RALT ,     ,RCTL ,    BLBR,BLDN,BLTO
+    LCTL ,LGUI ,LALT ,                              , RALT ,     ,CAPS ,    BLBR,BLDN,BLTO
  /*`ctrl-+-gui-+-alt-+----------space---------------+-fn---+-alt-+ctrl-'   `left+down+rght' */
   ),
 
