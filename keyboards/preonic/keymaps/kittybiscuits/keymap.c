@@ -37,11 +37,27 @@ enum preonic_keycodes {
   BACKLIT
 };
 
+#ifdef AUDIO_ENABLE
+float start_up[][2] = {
+   MUSICAL_NOTE(_B5, 20),
+   MUSICAL_NOTE(_B6, 8),
+   MUSICAL_NOTE(_DS6, 20),
+   MUSICAL_NOTE(_B6, 8),
+};
+
+float tone_qwerty[][2]     = SONG(QWERTY_SOUND);
+float tone_dvorak[][2]     = SONG(DVORAK_SOUND);
+float tone_colemak[][2]    = SONG(COLEMAK_SOUND);
+float tone_guitar[][2]     = SONG(GUITAR_SOUND);
+
+float goodbye[][2] = SONG(GOODBYE_SOUND);
+#endif
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
  * ,-----------------------------------------------------------------------------------.
- * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
+ * | GEsc |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
@@ -49,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * | Ctrl |Brite | GUI  | Alt  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_preonic_grid( \
@@ -65,12 +81,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
   KC_NO,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_SFTENT,  \
-  KC_LCTL, BACKLIT, KC_LGUI, KC_LALT, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT  \
+  KC_LCTL, BACKLIT, KC_NO,   KC_LALT, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT  \
 ),
 
 /* Colemak
  * ,-----------------------------------------------------------------------------------.
- * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
+ * | GEsc |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Tab  |   Q  |   W  |   F  |   P  |   G  |   J  |   L  |   U  |   Y  |   ;  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
@@ -91,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Dvorak
  * ,-----------------------------------------------------------------------------------.
- * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
+ * | GEsc |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Tab  |   "  |   ,  |   .  |   P  |   Y  |   F  |   G  |   C  |   R  |   L  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
@@ -137,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
+ * | Ins  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -158,7 +174,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | Reset|      |      |      |      |      |      |      |      |      |  Del |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |Aud on|AudOff|AGnorm|AGswap|Qwerty|Colemk|Dvorak|      |      |
+ * |      |      |      |Aud on|AudOff|AGnorm|AGswap|Qwerty|Colemk|Dvorak|Gaming|      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |Voice-|Voice+|Mus on|MusOff|MidiOn|MidOff|      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -180,25 +196,41 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
         case QWERTY:
           if (record->event.pressed) {
+            print("Mode: Qwerty\n");
+            #ifdef AUDIO_ENABLE
+              PLAY_SONG(tone_qwerty);
+            #endif
             set_single_persistent_default_layer(_QWERTY);
-          }
-          return false;
-          break;
-        case GAMING:
-          if (record->event.pressed) {
-            set_single_persistent_default_layer(_GAMING);
           }
           return false;
           break;
         case COLEMAK:
           if (record->event.pressed) {
+            print("Mode: Colemak\n");
+            #ifdef AUDIO_ENABLE
+              PLAY_SONG(tone_colemak);
+            #endif
             set_single_persistent_default_layer(_COLEMAK);
           }
           return false;
           break;
         case DVORAK:
           if (record->event.pressed) {
+            print("Mode: Dvorak\n");
+            #ifdef AUDIO_ENABLE
+              PLAY_SONG(tone_dvorak);
+            #endif
             set_single_persistent_default_layer(_DVORAK);
+          }
+          return false;
+          break;
+        case GAMING:
+          if (record->event.pressed) {
+            print("Mode: Gaming\n");
+            #ifdef AUDIO_ENABLE
+              PLAY_SONG(tone_guitar);
+            #endif
+            set_single_persistent_default_layer(_GAMING);
           }
           return false;
           break;
@@ -321,3 +353,10 @@ bool music_mask_user(uint16_t keycode) {
       return true;
   }
 }
+
+void matrix_init_user(void) {
+  #ifdef AUDIO_ENABLE
+    PLAY_SONG(start_up);
+  #endif
+}
+
